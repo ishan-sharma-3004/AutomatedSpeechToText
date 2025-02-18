@@ -1,0 +1,35 @@
+from distutils.core import setup
+
+setup(name='Distutils',
+      version='1.0',
+      description='Python Distribution Utilities',
+      author='Ishan Sharma',
+      author_email='ishu.ishan3004@gmail.com',
+      url='https://www.github.com/ishan-sharma-3004/',
+      packages=find_packages(),
+      install_requires=[
+          "torch>=1.10.0",
+          "transformers>=4.0.0",
+          "librosa>=0.8.1",
+          "pandas>=1.2.0",
+          "nunmpy>=1.19.5",
+          "scikit-learn>=0.24.2",
+          "textblob>=0.15.3",
+          "dvc>=2.0",
+          "mlflow>=1.18.0",
+          "h5py>=3.1.0",
+          "pydub>=0.25.1",
+          "matplotlib>=3.4.3",
+          "seaborn>=0.11.2",
+      ],
+      entry_points={
+          "console_scripts":[
+            "preprocess-audio=src.preprocess_audio:main",
+            "transcribe-audio=src.transcribe_audio:main",
+            "sentiment-analysis=src.sentiment_analysis:main",
+            "segment-audio=src.segment_audio:main",
+            "train-model=src.train_model:main",
+            ],
+        },
+    include_package_data=True,
+    )
